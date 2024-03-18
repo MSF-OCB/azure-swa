@@ -1,6 +1,34 @@
+// {
+//     "navigationFallback": {
+//       "rewrite": "index.html",
+//       "exclude": ["*.{png,jpg,gif,svg}", "*.css"]
+//     }
+// }
+
 {
-    "navigationFallback": {
-      "rewrite": "index.html",
-      "exclude": ["*.{png,jpg,gif,svg}", "*.css"]
+  "navigationFallback": {
+    "rewrite": "index.html",
+    "exclude": ["*.{png,jpg,gif,svg}", "*.css"]
+  },
+  "routes": [
+    {
+      "route": "/auth/*",
+      "allowedRoles": ["auth"]
     }
+  ],
+  "auth": {
+    "identityProviders": {
+      "azureActiveDirectory": {
+        "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+        "registration": {
+          "openIdIssuer": "https://login.microsoftonline.com/d8744154-de08-45ff-808d-c7f1157fc463",
+          "clientIdSettingName": "AZURE_CLIENT_ID",
+          "clientSecretSettingName": "AZURE_CLIENT_SECRET"
+        }
+      }
+    }
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-cache"
+  }
 }
