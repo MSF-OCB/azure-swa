@@ -12,8 +12,8 @@
   },
   "routes": [
     {
-      "route": "/auth/*",
-      "allowedRoles": ["auth"]
+      "route": "/login",
+      "redirect": "/.auth/login/aad"
     }
   ],
   "auth": {
@@ -21,7 +21,7 @@
       "azureActiveDirectory": {
         "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
         "registration": {
-          "openIdIssuer": "https://login.microsoftonline.com/d8744154-de08-45ff-808d-c7f1157fc463",
+          "openIdIssuer": "https://login.microsoftonline.com/<TENANT_ID>",
           "clientIdSettingName": "AZURE_CLIENT_ID",
           "clientSecretSettingName": "AZURE_CLIENT_SECRET"
         }
