@@ -1,19 +1,8 @@
-// {
-//     "navigationFallback": {
-//       "rewrite": "index.html",
-//       "exclude": ["*.{png,jpg,gif,svg}", "*.css"]
-//     }
-// }
-
 {
-  "navigationFallback": {
-    "rewrite": "index.html",
-    "exclude": ["*.{png,jpg,gif,svg}", "*.css"]
-  },
   "routes": [
     {
-      "route": "/login",
-      "redirect": "/.auth/login/aad"
+      "route": "/authenticated/*",
+      "allowedRoles": [ "authenticated" ]
     }
   ],
   "auth": {
@@ -21,7 +10,7 @@
       "azureActiveDirectory": {
         "userDetailsClaim": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
         "registration": {
-          "openIdIssuer": "https://login.microsoftonline.com/<TENANT_ID>",
+          "openIdIssuer": "https://login.microsoftonline.com/4d9dd1af-83ce-4e9b-b090-b0543ccc2b31",
           "clientIdSettingName": "AZURE_CLIENT_ID",
           "clientSecretSettingName": "AZURE_CLIENT_SECRET"
         }
