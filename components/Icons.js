@@ -1,9 +1,11 @@
 import React from 'react';
 
-export function LoginIcon({}) {
+export function LoginIcon({ slug }) {
   return (
     <div>
-      <button>Login</button>
+      <button>
+        <a href={`/${slug}`}>Login</a>
+      </button>
     </div>
   );
 }
