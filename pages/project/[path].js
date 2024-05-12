@@ -1,11 +1,4 @@
-import {
-  StarIcon,
-  WatchIcon,
-  BugIcon,
-  GithubIcon,
-  projectIcons,
-} from '../../components/Icons';
-import Link from 'next/link';
+import { projectIcons } from '../../components/Icons';
 import { projects } from '../../utils/projectsData';
 
 function Project({ project }) {
