@@ -47,12 +47,6 @@ h1 {
   letter-spacing: 1.1px;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 346px);
-  grid-template-rows: repeat(2, 256);
-  grid-gap: 50px;
-}
 
 .project {
   display: flex;
@@ -186,3 +180,4 @@ h1 {
 .button-github {
   background: #393939;
 }
+
