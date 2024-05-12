@@ -2,7 +2,6 @@ import { projectIcons } from '../../components/Icons';
 import { projects } from '../../utils/projectsData';
 
 function Project({ project }) {
-  const Icon = projectIcons[project.id];
   return (
     <div className="project">
       <aside>
