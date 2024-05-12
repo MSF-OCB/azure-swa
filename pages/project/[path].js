@@ -10,7 +10,7 @@ function Project({ project }) {
           {projects.map((project) => {
             return (
               <li key={project.id}>
-                <a href={`/project/${project.slug}`}>{project.name}</a>
+                <a href={`/${project.slug}`}>{project.name}</a>
               </li>
             );
           })}
@@ -20,22 +20,22 @@ function Project({ project }) {
   );
 }
 
-export async function getStaticPaths() {
-  const paths = projects.map((project) => ({
-    params: { path: project.slug },
-  }));
+// export async function getStaticPaths() {
+//   const paths = projects.map((project) => ({
+//     params: { path: project.slug },
+//   }));
 
-  return { paths, fallback: false };
-}
+//   return { paths, fallback: false };
+// }
 
-export async function getStaticProps({ params }) {
-  const project = projects.find((proj) => proj.slug === params.path);
-  const res = await fetch(`https://api.github.com/repos/${project.path}`);
-  const data = await res.json();
-  project.open_issues = data.open_issues;
-  project.subscribers_count = data.subscribers_count;
-  project.stargazers_count = data.stargazers_count;
-  return { props: { project } };
-}
+// export async function getStaticProps({ params }) {
+//   const project = projects.find((proj) => proj.slug === params.path);
+//   const res = await fetch(`https://api.github.com/repos/${project.path}`);
+//   const data = await res.json();
+//   project.open_issues = data.open_issues;
+//   project.subscribers_count = data.subscribers_count;
+//   project.stargazers_count = data.stargazers_count;
+//   return { props: { project } };
+// }
 
 export default Project;
